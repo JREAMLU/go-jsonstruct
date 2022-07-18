@@ -12,12 +12,12 @@ import (
 )
 
 var (
-	abbreviations             = flag.String("abbreviations", "", "comma-separated list of extra abbreviations")
-	format                    = flag.String("format", "json", "format (json or yaml)")
-	uncompress                = flag.Bool("z", false, "decompress input with gzip")
-	omitempty                 = flag.String("omitempty", "auto", "generate omitempty (never, always, or auto)")
-	packageComment            = flag.String("packagecomment", "", "package comment")
-	packageName               = flag.String("packagename", "main", "package name")
+	abbreviations  = flag.String("abbreviations", "", "comma-separated list of extra abbreviations")
+	format         = flag.String("format", "json", "format (json or yaml)")
+	uncompress     = flag.Bool("z", false, "decompress input with gzip")
+	omitempty      = flag.String("omitempty", "auto", "generate omitempty (never, always, or auto)")
+	packageComment = flag.String("packagecomment", "", "package comment")
+	// packageName               = flag.String("packagename", "main", "package name")
 	skipUnparseableProperties = flag.Bool("skipunparseableproperties", true, "skip unparseable properties")
 	structTagName             = flag.String("structtagname", "", "struct tag name")
 	typeComment               = flag.String("typecomment", "", "type comment")
@@ -81,9 +81,9 @@ func run() error {
 	if *packageComment != "" {
 		options = append(options, jsonstruct.WithPackageComment(*packageComment))
 	}
-	if *packageName != "" {
-		options = append(options, jsonstruct.WithPackageName(*packageName))
-	}
+	// if *packageName != "" {
+	// 	options = append(options, jsonstruct.WithPackageName(*packageName))
+	// }
 	if *typeComment != "" {
 		options = append(options, jsonstruct.WithTypeComment(*typeComment))
 	}
