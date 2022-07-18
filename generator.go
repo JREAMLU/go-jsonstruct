@@ -169,7 +169,7 @@ func (g *Generator) GoCode(observedValue *ObservedValue) ([]byte, error) {
 	if g.packageComment != "" {
 		fmt.Fprintf(buffer, "// %s\n", g.packageComment)
 	}
-	fmt.Fprintf(buffer, "package %s\n", g.packageName)
+	// fmt.Fprintf(buffer, "package %s\n", g.packageName)
 	imports := make(map[string]bool, len(g.imports))
 	for key, value := range g.imports {
 		imports[key] = value
